@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
                 return@setPositiveButton
             }
         }
+        // kullanıcı diyaloğun dışına tıkladığında diyalog kapanmaz
+        builder.setCancelable(false)
         // olumsuz buton
         builder.setNegativeButton("Hayır") { dialog, which ->
             dialog.dismiss() // diyalog penceresini kapat
