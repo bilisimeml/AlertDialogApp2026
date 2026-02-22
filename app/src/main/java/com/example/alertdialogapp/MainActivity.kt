@@ -57,6 +57,8 @@ class MainActivity : AppCompatActivity() {
         builder.setNegativeButton("Hayır") { dialog, which ->
             dialog.dismiss() // diyalog penceresini kapat
         }
+        // diyalog penceresinin ikonunu ayarla
+        builder.setIcon(android.R.drawable.btn_star_big_on)
         // diyalog penceresini göster
         val alertDialog = builder.create()
         alertDialog.show()
