@@ -21,7 +21,7 @@ Bu proje, Android platformunda kullanıcı etkileşimini artırmak ve kritik iş
 
 ## 📸 Ekran Görüntüleri
 
-| Ana Ekran | Diyalog Penceresi | Sonç Ekranı |
+| Ana Ekran | Diyalog Penceresi | Sonuç Ekranı |
 |:---:|:---:|:---:|
 | <img src="screenshots/mainscreen.png" width="184" height="398"> | <img src="screenshots/alertdialogopen.png" width="184" height="398"> | <img src="screenshots/resultactivity.png" width="184" height="398"> |
 
