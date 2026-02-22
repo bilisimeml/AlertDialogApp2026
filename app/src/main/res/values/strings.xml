@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">AlertDialog App</string>
     <string name="alertdialog_uygulamasi">AlertDialog Uygulaması</string>
-    <string name="mesajiniz">Mesajınız...</string>
+    <string name="mesajiniz">Mesajınız…</string>
     <string name="onayla">ONAYLA</string>
+    <string name="ikinci_aktivite">İkinci Aktivite</string>
+    <string name="birinci_aktiviteden_gelen_bilgi">Birinci aktiviteden gelen bilgi %1$s</string>
 </resources>
