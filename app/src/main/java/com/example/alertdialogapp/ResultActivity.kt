@@ -23,5 +23,8 @@ class ResultActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        // MainActivity'den gelen mesajı al
+        val gelenMesaj = intent.getStringExtra("mesaj")
+        binding.txtResult.text = getString(R.string.birinci_aktiviteden_gelen_bilgi, gelenMesaj)
     }
 }
