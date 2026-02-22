@@ -1,7 +1,9 @@
 package com.example.alertdialogapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,12 +37,24 @@ class MainActivity : AppCompatActivity() {
         // olumlu buton
         builder.setPositiveButton("Evet") { dialog, which ->
             val mesaj = binding.etMesaj.text.toString()
+            // edittext boş bırakılmadıysa bir sonraki aktiviteye geç
+            if (mesaj.isNotEmpty()) {
+                val intent = Intent(this@MainActivity, ResultActivity::class.java)
+                intent.putExtra("mesaj", mesaj)
+                startActivity(intent)
+            }else{
+                // edittext boş ise uyarı ver
+                Toast.makeText(
+                    this@MainActivity,
+                    "Mesaj boş bırakılamaz",
+                    Toast.LENGTH_SHORT).show()
+                return@setPositiveButton
+            }
         }
         // olumsuz buton
         builder.setNegativeButton("Hayır") { dialog, which ->
             dialog.dismiss() // diyalog penceresini kapat
         }
-
         // diyalog penceresini göster
         val alertDialog = builder.create()
         alertDialog.show()
