@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.alertdialogapp.databinding.ActivityMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +26,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun dialogAc(view : View){
+        // Uygulamanın modern görğnmesi için MaterialAlertDialogBuilder kullanıyoruz
+        // Context Seçimi: AlertDialog oluştururken applicationContext yerine
+        // mutlaka Activity'nin this referansını kullanmalısın; aksi takdirde uygulama hata verir.
+        val builder = MaterialAlertDialogBuilder(this@MainActivity)
+        builder.setTitle("Kaydet ve Git")
+        builder.setMessage("Kaydetmek ve Gitmek istediğinize emin misiniz?")
+        // olumlu buton
+        builder.setPositiveButton("Evet") { dialog, which ->
+            val mesaj = binding.etMesaj.text.toString()
+        }
+        // olumsuz buton
+        builder.setNegativeButton("Hayır") { dialog, which ->
+            dialog.dismiss() // diyalog penceresini kapat
+        }
+
+        // diyalog penceresini göster
+        val alertDialog = builder.create()
+        alertDialog.show()
 
     }
 }
